@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.Calendar;
 
 public abstract class Task {
     public static final String ANSI_RESET = "\u001B[0m";
@@ -15,12 +13,18 @@ public abstract class Task {
     private int priority;
     private int timeHour;
     private int timeMinute;
+    private int startH;
+    private int startM;
     static String typePerson;
     private String personal;
+    Calendar getTimeNow = Calendar.getInstance();
+
 
     public Task(String personal, String targetOfTask, int timeHour, int timeMinute, int priority, int deadLineH, int deadLineM) {
         count++;
         this.id = getCount();
+        this.startH = getTimeNow.get(Calendar.HOUR_OF_DAY);
+        this.startM = getTimeNow.get(Calendar.MINUTE);
         this.typePerson = getPerson();
         this.personal = personal;
         this.nameTask = targetOfTask;
@@ -30,10 +34,6 @@ public abstract class Task {
         this.deadLineH = deadLineH;
         this.deadLineM = deadLineM;
     }
-
-
-
-
 
     public String getNameTask() {
         return nameTask;
@@ -56,19 +56,16 @@ public abstract class Task {
     }
 
 
-
     public String getPerson() {
         return typePerson;
     }
 
-    public int getId() {
-        return this.id;
-    }
 
     public String getTask() {
-        return "ID задачи: " + id + ". Постановщик задачи: " + getPerson() + ". Ответственный: " + personal
-                + ". Суть задачи: " + nameTask + ". Время выполнения задачи: " + timeHour +" ч. "+ timeMinute
-                +"мин. "+ ". Приоритет задачи: " + getPriority() + ". Дедлайн: " + deadLineH+"ч. "+deadLineM+"мин.";
+        return "ID задачи: " + id + " Старт задачи: " + startH+" ч. "+startM+" мин. Постановщик задачи: "
+                + getPerson() + ". Ответственный: " + personal + ". Суть задачи: " + nameTask
+                + ". Время выполнения задачи: " + timeHour + " ч. " + timeMinute + " мин. " + ". Приоритет задачи: "
+                + getPriority() + ". Дедлайн: " + deadLineH + " ч. " + deadLineM + " мин.";
     }
 
     public String getPriority() {

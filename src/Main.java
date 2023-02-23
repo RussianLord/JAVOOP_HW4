@@ -15,10 +15,10 @@ public class Main {
 **** Файл должен содержать следующие данные: id, дату добавления записи, время добавления записи, дедлай задачи, ФИО автора и др
      */
     public static void main(String[] args) {
-        Task salary = new DirectorTask("Бухгалтерия","Поднять зарплаты",1,20,3,2,30);
-        Task check = new OfficeTask("Старший бухгалтер","Проверить зарплату",2,15,1,3,30);
-        Task install = new EngineerTask("Механик Олег","Установить двигатель",3,20,2,4,30);
-        Task pack = new StorageTask("Команда склада","Упаковать коробки",4,30,1,5,30);
+        Task salary = new DirectorTask("Бухгалтерия", "Поднять зарплаты", 1, 30, 3, 17, 35);
+        Task check = new OfficeTask("Старший бухгалтер", "Проверить зарплату", 2, 15, 1, 3, 30);
+        Task install = new EngineerTask("Механик Олег", "Установить двигатель", 3, 20, 2, 4, 30);
+        Task pack = new StorageTask("Команда склада", "Упаковать коробки", 4, 30, 1, 5, 30);
         System.out.println(salary.getTask());
         System.out.println(check.getTask());
         System.out.println(install.getTask());
