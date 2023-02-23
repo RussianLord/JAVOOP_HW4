@@ -9,12 +9,12 @@ public abstract class Task {
     public static final String ANSI_RED = "\u001B[31m";
     public final int id;
     private static int count;
-    private static int deadLineH;
-    private static int deadLineM;
+    private int deadLineH;
+    private int deadLineM;
     private String nameTask;
     private int priority;
-    private static int timeHour;
-    private static int timeMinute;
+    private int timeHour;
+    private int timeMinute;
     static String typePerson;
     private String personal;
 
