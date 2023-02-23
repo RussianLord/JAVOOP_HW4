@@ -15,22 +15,20 @@ public abstract class Task {
     private int timeHour;
     private int timeMinute;
     static String typePerson;
-    public static List<String> personal = new ArrayList<>();
+    private String personal;
 
-    public Task(String targetOfTask, int timeHour, int timeMinute, int priority) {
+    public Task(String personal, String targetOfTask, int timeHour, int timeMinute, int priority) {
         count++;
         this.id = getCount();
         this.typePerson = getPerson();
+        this.personal = personal;
         this.nameTask = targetOfTask;
         this.timeHour = timeHour;
         this.timeMinute = timeMinute;
         this.priority = priority;
     }
 
-    public String getStuf() {
-        Random random = new Random();
-        return personal.get(random.nextInt(personal.size()));
-    }
+
 
     public static int getDeadLine() {
         return deadLine;
@@ -56,9 +54,6 @@ public abstract class Task {
         return count;
     }
 
-    public static List<String> getPersonal() {
-        return personal;
-    }
 
 
     public String getPerson() {
@@ -70,7 +65,7 @@ public abstract class Task {
     }
 
     public String getTask() {
-        return "ID задачи: " + id + ". Постановщик задачи: " + getPerson() + ". Ответственный: " + getStuf() + ". Суть задачи: " + nameTask
+        return "ID задачи: " + id + ". Постановщик задачи: " + getPerson() + ". Ответственный: " + personal + ". Суть задачи: " + nameTask
                 + ". Время выполнения задачи: " + timeHour +" ч. "+ timeMinute +"мин. "+ ". Приоритет задачи: " + getPriority() + ". Дедлайн: " + deadLine;
     }
 

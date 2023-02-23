@@ -3,19 +3,8 @@ import java.util.Random;
 public class DirectorTask extends Task {
 
 
-    public DirectorTask(String type, int timeH, int timeM, int priority) {
-        super(type, timeH, timeM, priority);
-    }
-
-    public String getStuf(){
-        personal.add("Бухгалтер Екатерина");
-        personal.add("Инженер Олег");
-        personal.add("Механик Иван");
-        personal.add("Бухгалтер Анастасия");
-        personal.add("Сотрудник склада Мария");
-        personal.add("Сотрудник склада Алексей");
-        Random random = new Random();
-        return personal.get(random.nextInt(personal.size()));
+    public DirectorTask(String personal, String targetOfTask, int timeHour, int timeMinute, int priority) {
+        super(personal, targetOfTask, timeHour, timeMinute, priority);
     }
 
     @Override
