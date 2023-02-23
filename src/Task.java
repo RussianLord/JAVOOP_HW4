@@ -9,7 +9,8 @@ public abstract class Task {
     public static final String ANSI_RED = "\u001B[31m";
     public final int id;
     private static int count;
-    private static int deadLine;
+    private static int deadLineH;
+    private static int deadLineM;
     private String nameTask;
     private int priority;
     private int timeHour;
@@ -17,7 +18,7 @@ public abstract class Task {
     static String typePerson;
     private String personal;
 
-    public Task(String personal, String targetOfTask, int timeHour, int timeMinute, int priority) {
+    public Task(String personal, String targetOfTask, int timeHour, int timeMinute, int priority, int deadLineH, int deadLineM) {
         count++;
         this.id = getCount();
         this.typePerson = getPerson();
@@ -26,13 +27,13 @@ public abstract class Task {
         this.timeHour = timeHour;
         this.timeMinute = timeMinute;
         this.priority = priority;
+        this.deadLineH = deadLineH;
+        this.deadLineM = deadLineM;
     }
 
 
 
-    public static int getDeadLine() {
-        return deadLine;
-    }
+
 
     public String getNameTask() {
         return nameTask;
@@ -65,8 +66,9 @@ public abstract class Task {
     }
 
     public String getTask() {
-        return "ID задачи: " + id + ". Постановщик задачи: " + getPerson() + ". Ответственный: " + personal + ". Суть задачи: " + nameTask
-                + ". Время выполнения задачи: " + timeHour +" ч. "+ timeMinute +"мин. "+ ". Приоритет задачи: " + getPriority() + ". Дедлайн: " + deadLine;
+        return "ID задачи: " + id + ". Постановщик задачи: " + getPerson() + ". Ответственный: " + personal
+                + ". Суть задачи: " + nameTask + ". Время выполнения задачи: " + timeHour +" ч. "+ timeMinute
+                +"мин. "+ ". Приоритет задачи: " + getPriority() + ". Дедлайн: " + deadLineH+"ч. "+deadLineM+"мин.";
     }
 
     public String getPriority() {

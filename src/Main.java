@@ -15,10 +15,10 @@ public class Main {
 **** Файл должен содержать следующие данные: id, дату добавления записи, время добавления записи, дедлай задачи, ФИО автора и др
      */
     public static void main(String[] args) {
-        Task salary = new DirectorTask("Бухгалтерия","Поднять зарплаты",3,20,3);
-        Task check = new OfficeTask("Старший бухгалтер","Проверить зарплату",0,15,1);
-        Task install = new EngineerTask("Механик Олег","Установить двигатель",1,20,2);
-        Task pack = new StorageTask("Команда склада","Упаковать коробки",0,30,1);
+        Task salary = new DirectorTask("Бухгалтерия","Поднять зарплаты",3,20,3,17,30);
+        Task check = new OfficeTask("Старший бухгалтер","Проверить зарплату",0,15,1,17,30);
+        Task install = new EngineerTask("Механик Олег","Установить двигатель",1,20,2,17,30);
+        Task pack = new StorageTask("Команда склада","Упаковать коробки",0,30,1,17,30);
         System.out.println(salary.getTask());
         System.out.println(check.getTask());
         System.out.println(install.getTask());
@@ -29,5 +29,6 @@ public class Main {
         Calendar.addCalendar(pack);
 //        System.out.println(Calendar.getListTaksk());
         Calendar.fileWriter();
+        TimeChecker.checkerTime();
     }
 }
