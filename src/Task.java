@@ -13,8 +13,8 @@ public abstract class Task {
     private static int deadLineM;
     private String nameTask;
     private int priority;
-    private int timeHour;
-    private int timeMinute;
+    private static int timeHour;
+    private static int timeMinute;
     static String typePerson;
     private String personal;
 
@@ -82,5 +82,11 @@ public abstract class Task {
         return "Неизвестный";
     }
 
+    public int getDeadLineH() {
+        return deadLineH;
+    }
 
+    public int getDeadLineM() {
+        return deadLineM;
+    }
 }
